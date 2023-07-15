@@ -53,3 +53,13 @@ plt.show()
 
 print((dataset.diagnosis_M == 0).sum())
 print((dataset.diagnosis_M == 1).sum())
+
+
+
+# Correlation matrix and Heatmap
+
+dataset_2 = dataset.drop(columns='diagnosis_M')
+print(dataset_2.corrwith(dataset['diagnosis_M']).plot.bar(
+    figsize=(16,9), title = 'Correlation with diagnosis_M', 
+    rot = 45, grid = True
+))
